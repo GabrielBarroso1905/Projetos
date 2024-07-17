@@ -19,7 +19,7 @@ const Template: StoryFn<HeadingProps> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   colorDark: true,
-  size: 'huge',
+  headingSize: 'huge',
   uppercase: false,
   color: '',
 };

@@ -3,7 +3,7 @@ import { Theme } from '../../styles/theme';
 
 interface ContainerProps {
   colorDark: boolean;
-  size: 'small' | 'medium' | 'big' | 'huge'; 
+  headingSize: 'small' | 'medium' | 'big' | 'huge'; 
   uppercase: boolean;
   color: string;
 }
@@ -35,9 +35,9 @@ const mediaFont = (theme: Theme) => css`
 `;
 
 export const Title = styled.h1<ContainerProps>`
-  ${({ theme, colorDark, size, uppercase, color }) => css`
+  ${({ theme, colorDark, headingSize, uppercase, color }) => css`
     color: ${color || (colorDark ? theme.colors.primaryColor : theme.colors.white)};
-    ${titleSize[size](theme)};
+    ${titleSize[headingSize](theme)};
     ${titleCase(uppercase)};
   `}
 `;
