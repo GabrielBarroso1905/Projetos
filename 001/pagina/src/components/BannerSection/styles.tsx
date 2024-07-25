@@ -8,14 +8,14 @@ interface ContainerProps {
 
 export const BannerContainer = styled.div<ContainerProps>`
 ${({theme,position}) => css`
-background: linear-gradient(to right, ${theme.colors.secondaryColor} 10%, ${theme.colors.secondaryGradienteColor} 100%);
+  margin: 100px auto; 
+  background: linear-gradient(to right, ${theme.colors.secondaryColor} 10%, ${theme.colors.secondaryGradienteColor} 100%);
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  width: 100%;
   text-align: ${position};
   padding: 2rem 0rem;
-  margin: auto; 
   position: relative;
   height: 25.2rem;
   @media ${theme.media.lteMedium} {

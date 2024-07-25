@@ -1,43 +1,23 @@
-import { useState } from 'react';
-import './App.css';
-import { Button } from './styled';
-import { SectionBackground } from './components/SectionBackground';
+import React from 'react';
+import { Page, PageProps } from './Pages';
 
-function App() {
-  const [count, setCount] = useState(0);
+const App: React.FC = () => {
+  const pageProps: PageProps = {
+    textPosition: "center",
+    children: <div>Conteúdo adicional da página</div>,
+    background: true,
+    sectionId: 'main-section',
+    position: 'center', 
+    colorDark: false, 
+    headingSize: 'huge', 
+    uppercase: false, 
+    color: '#000000', 
+    textSize: 'medium', 
+    text: 'Texto do Banner', 
+  };
 
   return (
-    <>
-      <SectionBackground background={true} sectionId='#sextion1'>
-        <Button onClick={() => setCount((count) => count + 1)}>
-          Count Is {count}
-        </Button>
-        <Button onClick={() => setCount((count) => count + 1)}>
-          Count Is {count}
-        </Button>
-        <Button onClick={() => setCount((count) => count + 1)}>
-          Count Is {count}
-        </Button>
-        <Button onClick={() => setCount((count) => count + 1)}>
-          Count Is {count}
-        </Button>
-      </SectionBackground>
-      
-      <SectionBackground background={true} sectionId='#sextion2'>
-        <Button onClick={() => setCount((count) => count + 1)}>
-          Count Is {count}
-        </Button>
-        <Button onClick={() => setCount((count) => count + 1)}>
-          Count Is {count}
-        </Button>
-        <Button onClick={() => setCount((count) => count + 1)}>
-          Count Is {count}
-        </Button>
-        <Button onClick={() => setCount((count) => count + 1)}>
-          Count Is {count}
-        </Button>
-      </SectionBackground>
-    </>
+    <Page {...pageProps} />
   );
 }
 

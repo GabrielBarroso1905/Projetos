@@ -2,10 +2,12 @@ import styled, { css } from 'styled-components';
 
 
 interface Container{
-    textSize : "small" |"medium" |"large" |"huge" |"xsmall" 
+    textSize : "small" |"medium" |"large" |"huge" |"xsmall";
+    textPosition : 'start' | 'center' | 'end';
 } 
 export const Container = styled.div<Container>`
- ${({ theme, textSize }) => css`
+ ${({ theme, textSize ,textPosition}) => css`
+ text-align: ${textPosition};
     font-size: ${
       
       textSize === 'small'
